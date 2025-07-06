@@ -1,0 +1,112 @@
+# the exercises in this file use the turtle module instead of jupyturtle
+
+from turtle import forward, left, right, penup, pendown, clear, home, done
+# required functions from the chapter
+
+def polyline(n, length, angle):
+	for i in range(n):
+		forward(length)
+		left(angle)
+
+def polygon(n, length):
+	angle = 360 / n
+	polyline(n, length, angle)
+
+def arc(radius, angle):
+	arc_length = 2 * math.pi *radius * angle / 360
+	n = 30
+	length = arc_length / n
+	step_angle = angle / n
+	polyline(n, length, step_angle)
+
+def circle(radius):
+	arc(radius, 360)
+
+def jump(length):
+    """Move forward length units without leaving a trail.
+
+    Postcondition: leaves the pen down
+    """
+    penup()
+    forward(length)
+    pendown()
+
+
+
+# EXERCISE 1
+# Write a function called "rectangle" that draws a rectangle with the given side lengths.
+# ----------
+
+def rectangle(width, height):
+    """Draws a rectangle with the given width and height.
+    """
+    for _ in range(2):
+        forward(width)
+        left(90)
+        forward(height)
+        left(90)
+
+rectangle(80, 40)
+
+
+
+# EXERCISE 2
+# Write a function called "rhombus" that draws a rhombus with a given side length and interior angle.
+# ----------
+
+# cleanup from previous exercise
+clear()
+penup()
+home()
+pendown()
+
+def rhombus(length, angle):
+    """Draws a rhombus with a given side length and interior angle.
+    """
+    for _ in range(2):
+        forward(length)
+        left(angle)
+        forward(length)
+        left(180 - angle)
+
+rhombus(50, 60)
+
+
+
+# EXERCISE 3
+# Write a more general "parallelogram" function that draws a quadrilateral with parallel sides.
+# Then rewrite "rectangle" and "rhombus" to use "parallelogram".
+# ----------
+
+# cleanup
+clear()
+penup()
+home()
+pendown()
+
+def parallelogram(width, height, angle):
+    """Draws a quadrilateral parallelogram with the given side lengths and interior angle.
+    """
+    for _ in range(2):
+        forward(width)
+        left(angle)
+        forward(height)
+        left(180 - angle)
+
+def rectangle(width, height):
+    parallelogram(width, height, 90)
+
+def rhombus(length, angle):
+    parallelogram(length, length, angle)
+
+rectangle(80, 40)
+jump(100)
+rhombus(50, 60)
+jump(80)
+parallelogram(80, 50, 60)
+done()
+
+
+
+# EXERCISE 4
+# 
