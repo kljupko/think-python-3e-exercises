@@ -1,4 +1,4 @@
-# the exercises in this file use the turtle module instead of jupyturtle
+# The exercises in this file use the turtle module instead of jupyturtle
 
 from turtle import forward, left, right, penup, pendown, clear, home, done, speed
 import math
@@ -34,6 +34,8 @@ def jump(length):
 
 
 
+
+
 # EXERCISE 1
 # Write a function called "rectangle" that draws a rectangle with the given side lengths.
 # ----------
@@ -48,6 +50,8 @@ def rectangle(width, height):
         left(90)
 
 rectangle(80, 40)
+
+
 
 
 
@@ -71,6 +75,8 @@ def rhombus(length, angle):
         left(180 - angle)
 
 rhombus(50, 60)
+
+
 
 
 
@@ -105,6 +111,8 @@ jump(100)
 rhombus(50, 60)
 jump(80)
 parallelogram(80, 50, 60)
+
+
 
 
 
@@ -156,8 +164,10 @@ draw_pie(50, 7)
 
 
 
+
+
 # EXERCISE 5
-# Do the same for petals and a flower
+# Do the same for petals and a flower.
 # ----------
 
 #cleanup
@@ -184,8 +194,10 @@ draw_flower(40, 90, 9)
 
 
 
+
+
 # EXERCISE 6
-# Use a chatbot to write a function that draws a spiral
+# Use a chatbot to write a function that draws a spiral.
 # ----------
 
 #cleanup

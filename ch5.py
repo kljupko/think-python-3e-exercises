@@ -1,4 +1,24 @@
 # EXERCISE 1
+# Ask a chatbot.
+# -----------
+
+# 1. First question is not relevant here.
+
+
+
+# 2. Ask a chatbot how to use XOR in Python.
+
+# use the != operator
+a = True
+b = False
+
+print(a != b)   # True only if they are opposite.
+
+
+
+
+
+# EXERCISE 2
 # The exercise requires the following
 
 from time import time
@@ -18,7 +38,9 @@ print("Days:", days, "\nTime is", hour, ":", minute, ":", second)
 
 
 
-# EXERCISE 2
+
+
+# EXERCISE 3
 # Write a function named "is_triangle" that takes 3 integers as arguments
 # and prints either "Yes" or "No" depending on if it is possible to form a triangle with sticks of the given lengths
 # ----------
@@ -34,7 +56,9 @@ is_triangle(4, 5, 6)
 
 
 
-# EXERCISE 3
+
+
+# EXERCISE 4
 # Draw the stack diagram of the following program:
 
 def recurse(n, s):
@@ -60,7 +84,9 @@ recurse(3, 0)
 
 
 
-# EXERCISE 4
+
+
+# EXERCISE 5
 # Guess what the function below does
 
 from turtle import forward, left, right, back, clear, penup, pendown, home
@@ -87,7 +113,9 @@ draw(100)
 
 
 
-# EXERCISE 5
+
+
+# EXERCISE 6
 # Write a function to draw a Koch curve
 # -----------
 
@@ -113,7 +141,9 @@ koch(120)
 
 
 
-# EXERCISE 6
+
+
+# EXERCISE 7
 # Use a chatbot to create a function that draws a Sierpinski triangle.
 # ----------
 
@@ -153,4 +183,3 @@ def sierpinski(length, depth):
     done()
 
 sierpinski(400, 4)
-
