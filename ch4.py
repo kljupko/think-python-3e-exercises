@@ -1,6 +1,7 @@
 # the exercises in this file use the turtle module instead of jupyturtle
 
 from turtle import forward, left, right, penup, pendown, clear, home, done
+import math
 # required functions from the chapter
 
 def polyline(n, length, angle):
@@ -104,9 +105,80 @@ jump(100)
 rhombus(50, 60)
 jump(80)
 parallelogram(80, 50, 60)
-done()
 
 
 
 # EXERCISE 4
-# 
+# Write a function called "triangle" which draws a triangle, then write a function called "draw_pie" that draws a pie made up of triangles.
+# ----------
+
+#cleanup
+clear()
+penup()
+home()
+pendown()
+
+def triangle(base, sides):
+    """Draws an isosceles triangle based on the parameters
+
+    base: length of the base
+    sides: length of the two identical sides
+    """
+    angle_A = 180 - math.degrees(math.acos(base / (2 * sides)))
+
+    forward(base)
+    left(angle_A)
+    forward(sides)
+    left(angle_A * 2 * -1)
+    forward(sides)
+    left(angle_A)
+
+def draw_pie(radius, pieces):
+    """Draws a pie made of triangles
+
+    radius: the radius of the pie
+    pieces: the number of pieces of the pie
+    """
+    base = 2 * radius * math.sin(math.pi / pieces)
+    piece_angle = 360 / pieces
+    for _ in range(pieces):
+        triangle(base, radius)
+        penup()
+        forward(base)
+        pendown()
+        left(piece_angle)
+
+draw_pie(50, 5)
+jump(120)
+draw_pie(50, 6)
+jump(120)
+draw_pie(50, 7)
+
+
+
+# EXERCISE 5
+# Do the same for petals and a flower
+# ----------
+
+#cleanup
+clear()
+penup()
+home()
+pendown()
+
+def petal(length, width):
+  arc(length, width)
+  left(180 - width)
+  arc(length, width)
+  left(180 - width)
+
+def draw_flower(size, width, npetals):
+  petal_angle = 360 / npetals
+  for _ in range(npetals):
+    petal(size, width)
+    left(petal_angle)
+
+draw_flower(60, 60, 6)
+jump(120)
+draw_flower(40, 90, 9)
+done()
