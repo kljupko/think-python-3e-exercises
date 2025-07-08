@@ -1,6 +1,6 @@
 # the exercises in this file use the turtle module instead of jupyturtle
 
-from turtle import forward, left, right, penup, pendown, clear, home, done
+from turtle import forward, left, right, penup, pendown, clear, home, done, speed
 import math
 # required functions from the chapter
 
@@ -181,4 +181,35 @@ def draw_flower(size, width, npetals):
 draw_flower(60, 60, 6)
 jump(120)
 draw_flower(40, 90, 9)
+
+
+
+# EXERCISE 6
+# Use a chatbot to write a function that draws a spiral
+# ----------
+
+#cleanup
+clear()
+penup()
+home()
+pendown()
+
+def draw_spiral(length=100, angle=30, step=5):
+    """
+    Draws a spiral using turtle graphics.
+
+    Parameters:
+    - length: how far the spiral extends outward
+    - angle: how much to turn at each step (degrees)
+    - step: how much to increase line length per turn
+    """
+    speed(0)      # Fastest drawing speed
+    dist = 0             # Initial forward distance
+
+    while dist < length:
+        forward(dist)
+        left(angle)
+        dist += step
+
+draw_spiral(length=300, angle=30, step=5)
 done()
