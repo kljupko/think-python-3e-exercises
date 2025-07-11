@@ -147,6 +147,7 @@ def count_words(pattern):
         result = re.search(pattern, line)
         if result != None:
             count += 1
+    reader.close()
     return count
 
 pattern = re.compile(r'\b(?:pale(?:s|d|ness)?|pallor)\b', re.IGNORECASE) # provided by ChatGPT 4o
