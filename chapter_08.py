@@ -141,7 +141,7 @@ import re
 
 def count_words(pattern):
     count = 0
-    reader = open("resources/pg1184.txt")
+    reader = open("resources/pg1184_cleaned.txt")
     for line in reader:
         line = line.strip().lower()
         result = re.search(pattern, line)
