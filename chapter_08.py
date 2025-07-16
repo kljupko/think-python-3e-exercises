@@ -32,8 +32,9 @@ def head(read_file, n_lines, write_file):
     else:
         print(lines)
 
+# writing to the "output" folder
 head("resources/pg345_cleaned.txt", 100, "resources/pg345_output100.txt")
-head("resources/pg345_cleaned.txt", 100, None)
+head("resources/pg345_cleaned.txt", 30, None)
 
 
 
